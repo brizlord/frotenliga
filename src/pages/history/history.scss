@@ -1,0 +1,53 @@
+page-history {
+
+.toolbar-background{
+background:#287a28;
+}
+
+.bar-button-menutoggle{
+color:white;
+}
+
+.toolbar-title{
+color:white;
+}
+
+.bodyContent{
+background: url('../assets/imgs/balls2.jpg') no-repeat;
+background-size: cover;
+background-position:center;
+color:white;
+}
+
+small{
+color:black;
+}
+
+small.notify{
+color:white;
+}
+
+.titleCard{
+font-size: 1.4rem !important;
+}
+
+div.swiper-pagination {
+   top:20px !important;
+   bottom:inherit !important;
+}
+
+.swiper-pagination-bullet-active {
+  background:#b3ff66;
+}
+
+.backgndList{
+ion-item{
+background-color:transparent;
+color:white;
+}
+
+p{
+color:white;
+}
+}
+}

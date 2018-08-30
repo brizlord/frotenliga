@@ -1,0 +1,262 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Inicio</ion-title>
+        <ion-buttons end *ngIf="!dataSvc.userLogged">
+            <button ion-button icon-only (click)="Login()">
+                <ion-icon class="imgLogin" name="contact"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="bodyContent">
+    <ion-grid *ngIf="dataSvc.config.totalCountMatches>0 && dataSvc.userLogged">
+        <button ion-button color="secondary" (click)="openNewMatchday()" outline>Nueva Jornada</button>
+    </ion-grid>
+
+    <ion-grid *ngIf="season!=null">
+        <ion-row *ngIf="matchdays!=null">
+            <ion-col col-6 offset-3 text-center style="color: white;">
+                <h1>{{matchdays}}</h1>
+                <h5 style="margin-top: -10px">Jornadas</h5>
+                <small class="notify" *ngIf="oneMatchLeft">Falta 1 partido para terminar la temporada</small>
+                <small class="notify" *ngIf="seasonEnd">Último partido de la temporada</small>
+                <br>
+                <small>
+                    <ion-badge color="dark">{{season}}</ion-badge>
+                </small>
+            </ion-col>
+        </ion-row>
+
+        <ion-row *ngIf="matchdays!=null">
+            <ion-slides pager>
+
+                <ion-slide>
+                    <br>
+                    <br>
+                    <ion-row *ngIf="mvpPlayerSeason.length>0">
+                        <ion-col col-sm-12 col-md-6 offset-md-3>
+                            <ion-card text-center (click)="showPlayerProfile(mvpPlayerSeason[0]?.player)">
+
+                                <ion-card-content>
+
+                                    <ion-grid>
+                                        <ion-row>
+                                            <ion-col col-12>
+                                                <h3>MVP de la temporada</h3>
+                                            </ion-col>
+                                        </ion-row>
+
+                                        <ion-row>
+                                            <ion-col col-6 text-center>
+                                                <img width="256" src="assets/imgs/pht.png">
+
+                                                <h3>{{mvpPlayerSeason[0]?.player}}</h3>
+                                            </ion-col>
+
+                                            <ion-col col-6 text-center>
+                                                <br>
+                                                <br>
+                                                <h1 style="font-size: 44px">{{mvpPlayerSeason[0]?.rating}}</h1>
+                                                <small>Rating / 100</small>
+                                            </ion-col>
+                                        </ion-row>
+
+                                    </ion-grid>
+
+                                </ion-card-content>
+
+                            </ion-card>
+                        </ion-col>
+                    </ion-row>
+
+                    <ion-row>
+                        <ion-col col-6 *ngIf="plusfrotatores?.length>0">
+                            <ion-card text-center (click)="showPlayerProfile(plusfrotatores[0]?.name)">
+                                <ion-card-content>
+
+                                    <ion-grid>
+                                        <ion-row>
+                                            <ion-col col-12>
+                                                <h3>Goleador</h3>
+                                            </ion-col>
+                                        </ion-row>
+                                        <ion-row>
+                                            <ion-col col-4 offset-4>
+                                                <img width="256" src="assets/imgs/pht.png">
+                                            </ion-col>
+                                        </ion-row>
+
+                                        <br>
+
+                                        <ion-row style="margin-top: -15px">
+                                            <ion-col col-12>
+                                                <h3>{{plusfrotatores[0]?.name}}</h3>
+                                                <h2>
+                                                    <ion-badge item-start>{{plusfrotatores[0]?.goals}} Goles
+                                                    </ion-badge>
+                                                </h2>
+
+                                                <small>{{plusfrotatores[0]?.avg}} goles / partidos</small>
+
+                                            </ion-col>
+
+                                        </ion-row>
+
+                                    </ion-grid>
+
+                                </ion-card-content>
+
+                            </ion-card>
+                        </ion-col>
+
+                        <ion-col col-6 *ngIf="assistances?.length>0">
+                            <ion-card text-center (click)="showPlayerProfile(assistances[0]?.name)">
+                                <ion-card-content>
+
+                                    <ion-grid>
+                                        <ion-row>
+                                            <ion-col col-12>
+                                                <h3>Asistidor</h3>
+                                            </ion-col>
+                                        </ion-row>
+                                        <ion-row>
+                                            <ion-col col-4 offset-4>
+                                                <img width="256" src="assets/imgs/pht.png">
+                                            </ion-col>
+                                        </ion-row>
+
+                                        <br>
+
+                                        <ion-row style="margin-top: -15px">
+                                            <ion-col col-12>
+                                                <h3>{{assistances[0]?.name}}</h3>
+                                                <h2>
+                                                    <ion-badge item-start>{{assistances[0]?.assistances}} Asist.
+                                                    </ion-badge>
+                                                </h2>
+
+                                                <small>{{assistances[0]?.avg}} asist. / partidos</small>
+                                            </ion-col>
+                                        </ion-row>
+                                    </ion-grid>
+
+                                </ion-card-content>
+
+                            </ion-card>
+                        </ion-col>
+                    </ion-row>
+
+                    <ion-row>
+                        <ion-col col-6 *ngIf="spy?.length>0">
+                            <ion-card (click)="showPlayerProfile(spy[0]?.name)">
+
+                                <ion-card-content>
+
+                                    <ion-grid>
+                                        <ion-row>
+                                            <ion-col col-12 text-center>
+                                                <h3>El Espía</h3>
+                                            </ion-col>
+                                        </ion-row>
+                                        <ion-row>
+                                            <ion-col col-4 offset-4>
+                                                <img width="128" src="assets/imgs/pht.png">
+                                            </ion-col>
+                                        </ion-row>
+
+                                        <br>
+
+                                        <ion-row style="margin-top: -15px">
+                                            <ion-col col-12 text-center>
+                                                <h3>{{spy[0]?.name}}</h3>
+                                            </ion-col>
+                                        </ion-row>
+
+                                        <ion-row>
+                                            <ion-col col-12 text-center>
+                                                <h2>{{spy[0]?.autogoals}}</h2>
+                                                <h3>Autogoles</h3>
+                                            </ion-col>
+                                        </ion-row>
+                                    </ion-grid>
+
+                                </ion-card-content>
+
+                            </ion-card>
+                        </ion-col>
+
+                        <ion-col col-6 *ngIf="lennadores[0]?.totalCards > 0">
+                            <ion-card (click)="showPlayerProfile(lennadores[0]?.name)">
+
+                                <ion-card-content>
+
+                                    <ion-grid>
+                                        <ion-row>
+                                            <ion-col col-12 text-center>
+                                                <h3>Leñador</h3>
+                                            </ion-col>
+                                        </ion-row>
+                                        <ion-row>
+                                            <ion-col col-4 offset-4>
+                                                <img width="128" src="assets/imgs/pht.png">
+                                            </ion-col>
+                                        </ion-row>
+
+                                        <br>
+
+                                        <ion-row style="margin-top: -15px">
+                                            <ion-col col-12 text-center>
+                                                <h3>{{lennadores[0]?.name}}</h3>
+                                            </ion-col>
+                                        </ion-row>
+
+                                        <ion-row>
+                                            <ion-col col-12 text-center>
+                                                <h2>{{lennadores[0]?.yCards +' / '+ lennadores[0]?.rCards}}</h2>
+                                                <h3>T.A. / T.R.</h3>
+                                            </ion-col>
+                                        </ion-row>
+                                    </ion-grid>
+
+                                </ion-card-content>
+
+                            </ion-card>
+                        </ion-col>
+                    </ion-row>
+                </ion-slide>
+
+                <ion-slide>
+                    <br>
+                    <br>
+                    <h6>...en otras temporadas hasta la jornada {{matchdays}}</h6>
+
+                    <ion-row>
+                        <ion-col col-12>
+                            <div style="display: block;">
+                                <canvas baseChart width="300" height="400" style="color:white"
+                                        *ngIf="chartGoals?.lineChartData?.length>0"
+                                        [datasets]="chartGoals?.lineChartData"
+                                        [labels]="chartGoals?.lineChartLabels"
+                                        [options]="chartGoals?.lineChartOptions"
+                                        [colors]="chartGoals?.lineChartColors"
+                                        [legend]="chartGoals?.lineChartLegend"
+                                        [chartType]="chartGoals?.lineChartType"
+                                ></canvas>
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                </ion-slide>
+
+            </ion-slides>
+        </ion-row>
+    </ion-grid>
+
+    <ion-grid *ngIf="season==null || matchdays==null" text-center>
+        <h1>No se ha jugado nada</h1>
+        <h3>Largo de aquí</h3>
+    </ion-grid>
+</ion-content>

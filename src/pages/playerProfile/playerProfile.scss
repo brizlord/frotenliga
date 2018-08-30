@@ -1,0 +1,70 @@
+page-playerProfile {
+
+.toolbar-background{
+background:#287a28;
+}
+
+.bar-button-menutoggle{
+color:white;
+}
+
+.toolbar-title{
+color:white;
+}
+
+.bodyContent{
+background: url('../assets/imgs/player.jpg') no-repeat;
+background-size: cover;
+color:white;
+background-position:right;
+}
+
+.back-button{
+color:white;
+}
+
+.bar-button{
+color:white;
+}
+
+small.notify{
+color:white;
+}
+
+.titleCard{
+font-size: 1.4rem !important;
+}
+
+div.swiper-pagination {
+   top:20px;
+   bottom:inherit;
+}
+
+.swiper-pagination-bullet-active {
+  background:#b3ff66;
+}
+
+.elo{
+background:#cbcb2f;
+border-radius:100%;
+padding-bottom:15px;
+padding-top:15px;
+}
+
+.glitterbackImage{
+//background-image:url(https://i.gifer.com/YGg4.gif);
+background-image:url('../../assets/imgs/fireworks.gif');
+
+}
+
+.imgAvatarProfile{
+width:90%;
+border-radius:50%;
+}
+
+.takePictImg{
+position:absolute;
+bottom:15px;
+left:65%;
+}
+}

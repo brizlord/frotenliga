@@ -1,0 +1,61 @@
+<ion-header>
+    <ion-navbar>
+
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Compartir Datos</ion-title>
+
+        <!--<ion-buttons start (click)="showDataPlayerModal()">-->
+        <!--<button ion-button icon-only>-->
+        <!--<ion-icon name="add"></ion-icon>-->
+        <!--</button>-->
+        <!--</ion-buttons>-->
+
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-list padding>
+
+        <div text-center>
+            <img class="imgShare"
+                 src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEycHgiIGhlaWdodD0iNTEycHgiPgo8cGF0aCBzdHlsZT0iZmlsbDojOTFDRUNFOyIgZD0iTTE2Mi4xMzMsOC41MzNoMTg3LjczM2MxOC44NSwwLDM0LjEzMywxNS4yODMsMzQuMTMzLDM0LjEzM3Y0MDkuNmwwLDBIMTI4bDAsMHYtNDA5LjYgIEMxMjgsMjMuODE3LDE0My4yODMsOC41MzMsMTYyLjEzMyw4LjUzM3oiLz4KPGc+Cgk8cGF0aCBzdHlsZT0iZmlsbDojRkZEMzNGOyIgZD0iTTE3MC42NjcsMjUuNlY4LjUzM2gxNzAuNjY3VjI1LjZjMCw5LjQyOS03LjYzNywxNy4wNjctMTcuMDY3LDE3LjA2N0gxODcuNzMzICAgQzE3OC4zMDQsNDIuNjY3LDE3MC42NjcsMzUuMDI5LDE3MC42NjcsMjUuNnoiLz4KCTxwYXRoIHN0eWxlPSJmaWxsOiNGRkQzM0Y7IiBkPSJNMTI4LDQ1Mi4yNjd2MTcuMDY3YzAsMTguODUsMTUuMjgzLDM0LjEzMywzNC4xMzMsMzQuMTMzaDE4Ny43MzMgICBjMTguODUsMCwzNC4xMzMtMTUuMjgzLDM0LjEzMy0zNC4xMzN2LTE3LjA2N0gxMjh6Ii8+CjwvZz4KPGc+Cgk8cmVjdCB4PSIyMzAuNCIgeT0iNDA5LjYiIHN0eWxlPSJmaWxsOiMzODM4NTY7IiB3aWR0aD0iOTMuODY3IiBoZWlnaHQ9IjE3LjA2NyIvPgoJPHJlY3QgeD0iMzQxLjMzMyIgeT0iNDA5LjYiIHN0eWxlPSJmaWxsOiMzODM4NTY7IiB3aWR0aD0iMTcuMDY3IiBoZWlnaHQ9IjE3LjA2NyIvPgo8L2c+CjxnPgoJPHBhdGggc3R5bGU9ImZpbGw6I0VBMzgzNjsiIGQ9Ik0yNTYsMzI0LjI2N2MtMTguODUsMC0zNC4xMzMtMTUuMjgzLTM0LjEzMy0zNC4xMzNDMjIxLjg2NywyNzEuMjgzLDIzNy4xNSwyNTYsMjU2LDI1NiAgIGMxOC44NSwwLDM0LjEzMywxNS4yODMsMzQuMTMzLDM0LjEzM0MyOTAuMTMzLDMwOC45ODMsMjc0Ljg1LDMyNC4yNjcsMjU2LDMyNC4yNjd6IE0yNTYsMjczLjA2NyAgIGMtOS40MjksMC0xNy4wNjcsNy42MzctMTcuMDY3LDE3LjA2N2MwLDkuNDI5LDcuNjM3LDE3LjA2NywxNy4wNjcsMTcuMDY3YzkuNDI5LDAsMTcuMDY3LTcuNjM3LDE3LjA2Ny0xNy4wNjcgICBDMjczLjA2NywyODAuNzA0LDI2NS40MjksMjczLjA2NywyNTYsMjczLjA2N3oiLz4KCTxwYXRoIHN0eWxlPSJmaWxsOiNFQTM4MzY7IiBkPSJNMzEzLjI0MiwyNDcuNDY3Yy0yLjQyMywwLTQuNzM2LTEuMDMzLTYuMzU3LTIuODQyYy0yNS4xMzEtMjguMS02OC4yOTItMzAuNTA3LTk2LjM5My01LjM3NiAgIGMtMS44ODYsMS42OS0zLjY4NiwzLjQ4Mi01LjM3Niw1LjM3NmMtMy4xMTUsMy41NDEtOC40OTksMy44OTEtMTIuMDQxLDAuNzc3Yy0zLjU0MS0zLjExNS0zLjg5MS04LjQ5OS0wLjc3Ny0xMi4wNDEgICBjMC4wMzQtMC4wNDMsMC4wNjgtMC4wNzcsMC4xMDItMC4xMTljMzEuNDItMzUuMTIzLDg1LjM2Ny0zOC4xMjcsMTIwLjQ5MS02LjcwN2MyLjM1NSwyLjEwOCw0LjU5OSw0LjM0Myw2LjcwNyw2LjcwNyAgIGMzLjE0LDMuNTA3LDIuODQyLDguOTA5LTAuNjY2LDEyLjA0OUMzMTcuMzcyLDI0Ni42OSwzMTUuMzQxLDI0Ny40NjcsMzEzLjI0MiwyNDcuNDY3eiIvPgoJPHBhdGggc3R5bGU9ImZpbGw6I0VBMzgzNjsiIGQ9Ik0zNDkuODY3LDIxMS42MjdjLTIuMzcyLDAtNC42NDItMC45OS02LjI1NS0yLjczMWMtNDQuODYtNDguMzg0LTEyMC40NDgtNTEuMjUxLTE2OC44MzItNi4zOTEgICBjLTIuMjEsMi4wNDgtNC4zNDMsNC4xODEtNi4zOTEsNi4zOTFjLTMuMTQsMy41MDctOC41NDIsMy44MDYtMTIuMDQ5LDAuNjY2cy0zLjgwNi04LjU0Mi0wLjY2Ni0xMi4wNDkgICBjMC4wNjgtMC4wNzcsMC4xMzctMC4xNDUsMC4yMDUtMC4yMjJjNTEuMjY4LTU1LjI5NiwxMzcuNjUxLTU4LjU2NCwxOTIuOTQ3LTcuMjk2YzIuNTI2LDIuMzM4LDQuOTU4LDQuNzcsNy4yOTYsNy4yOTYgICBjMy4yMDksMy40NTYsMy4wMDQsOC44NTgtMC40NTIsMTIuMDU4QzM1NC4wOTEsMjEwLjgxNiwzNTIuMDE3LDIxMS42MjcsMzQ5Ljg2NywyMTEuNjI3eiIvPgo8L2c+CjxwYXRoIHN0eWxlPSJmaWxsOiM4M0IyQjc7IiBkPSJNMzA4LjUzMSw0MDkuNmgxNS43MzZ2MTcuMDY3aC0zOS41OTVjLTE2LjA2LDEwLjA5NS0zMy4wMjQsMTguNjYyLTUwLjY3OSwyNS42SDM4NFYyOTIuMDAyICBDMzcyLjQ4LDMzOC40NDEsMzQ1Ljk1LDM3OS43ODUsMzA4LjUzMSw0MDkuNnogTTM1OC40LDQyNi42NjdoLTE3LjA2N1Y0MDkuNkgzNTguNFY0MjYuNjY3eiIvPgo8cGF0aCBzdHlsZT0iZmlsbDojRkZBQzNFOyIgZD0iTTEyOC45OTgsNDc3LjIxYzMuNjQ0LDE1LjM2LDE3LjM0OCwyNi4yMjMsMzMuMTM1LDI2LjI1N2gxODcuNzMzICBjMTguODUsMCwzNC4xMzMtMTUuMjgzLDM0LjEzMy0zNC4xMzN2LTE3LjA2N0gyMzMuOTkzQzIwMC4zMjksNDY1LjQyNSwxNjQuOTgzLDQ3My44MjIsMTI4Ljk5OCw0NzcuMjF6Ii8+CjxnPgoJPHBhdGggc3R5bGU9ImZpbGw6IzIwMjAzMzsiIGQ9Ik0zMjQuMjY3LDQyNi42NjdWNDA5LjZoLTE1LjczNmMtNy42MjksNi4xNDQtMTUuNjA3LDExLjg0NC0yMy44OTMsMTcuMDY3SDMyNC4yNjd6Ii8+Cgk8cmVjdCB4PSIzNDEuMzMzIiB5PSI0MDkuNiIgc3R5bGU9ImZpbGw6IzIwMjAzMzsiIHdpZHRoPSIxNy4wNjciIGhlaWdodD0iMTcuMDY3Ii8+CjwvZz4KPHBhdGggc3R5bGU9ImZpbGw6I0ZGQUMzRTsiIGQ9Ik0xODcuNzMzLDQyLjY2N2gxMzYuNTMzYzkuNDI5LDAsMTcuMDY3LTcuNjM3LDE3LjA2Ny0xNy4wNjdWOC41MzMgIEMzNDEuMzMzLDM0LjEzMywxODcuNzMzLDQyLjY2NywxODcuNzMzLDQyLjY2N3oiLz4KPHBhdGggZD0iTTE2MC41MzgsNTEyaDE5MC45MzNjMjIuNjY1LTAuMDI2LDQxLjAzNy0xOC4zOTgsNDEuMDYyLTQxLjA2MlY0MS4wNzFDMzkyLjUwOCwxOC4zOTgsMzc0LjE0NCwwLjAyNiwzNTEuNDcxLDBIMTYwLjUzOCAgYy0yMi42NzMsMC4wMjYtNDEuMDQ1LDE4LjM5OC00MS4wNzEsNDEuMDcxdjQyOS44NjdDMTE5LjQ5Miw0OTMuNjExLDEzNy44NjUsNTExLjk3NCwxNjAuNTM4LDUxMnogTTM1MS40NzEsNDk0LjkzM0gxNjAuNTM4ICBjLTEzLjI1Mi0wLjAxNy0yMy45ODctMTAuNzQzLTI0LjAwNC0yMy45OTZWNDYwLjhoMjM4LjkzM3YxMC4xMzhDMzc1LjQ1LDQ4NC4xODEsMzY0LjcxNSw0OTQuOTE2LDM1MS40NzEsNDk0LjkzM3ogTTMzMi44LDE3LjA2NyAgVjI1LjZjMCw0LjcxLTMuODIzLDguNTMzLTguNTMzLDguNTMzSDE4Ny43MzNjLTQuNzEsMC04LjUzMy0zLjgyMy04LjUzMy04LjUzM3YtOC41MzNIMzMyLjh6IE0xNjAuNTM4LDE3LjA2N2gxLjU5NlYyNS42ICBjMCwxNC4xNCwxMS40NiwyNS42LDI1LjYsMjUuNmgxMzYuNTMzYzE0LjE0LDAsMjUuNi0xMS40NiwyNS42LTI1LjZ2LTguNTMzaDEuNjA0YzEzLjI1MiwwLjAxNywyMy45NzksMTAuNzUyLDIzLjk5NiwyNC4wMDQgIHY0MDIuNjYySDEzNi41MzNWNDEuMDcxQzEzNi41NSwyNy44MTksMTQ3LjI4NSwxNy4wODQsMTYwLjUzOCwxNy4wNjd6Ii8+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo="/>
+        </div>
+
+        <br>
+
+        <ion-row>
+            <ion-col col-6>
+                <button ion-button block (click)="saveFile()">
+                    <ion-icon name="arrow-up"></ion-icon>
+                    Exportar
+                </button>
+            </ion-col>
+
+            <ion-col col-6>
+                <button ion-button block (click)="loadFile()">
+                    <ion-icon name="arrow-down"></ion-icon>
+                    Importar
+                </button>
+            </ion-col>
+        </ion-row>
+
+        <br>
+
+        <ion-row>
+            <ion-col col-12>
+                <h6 class="subtitle" style="text-align: justify">
+                    Esta opción es para compartir los datos que se van guardando en la aplicación y así poderlo
+                    distribuir entre todos. Cuando se exporta la información, se hace a una carpeta en el
+                    <b>almacenamiento del dispositivo</b> llamada <b>Frotenliga</b> y dentro se encuentra
+                    el fichero que se pasa de dispositivo a dispositivo (Zapya, Bluetooth, NFC, etc.).
+                </h6>
+
+                <h6 class="subtitle" style="text-align: justify">
+                    Desde el botón importar se llega hasta la ruta donde se encuentra el fichero y se selecciona.
+                </h6>
+            </ion-col>
+        </ion-row>
+    </ion-list>
+</ion-content>

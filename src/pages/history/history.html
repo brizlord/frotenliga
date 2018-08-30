@@ -1,0 +1,188 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Historia</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="bodyContent">
+    <ion-grid>
+        <ion-row>
+            <ion-slides pager>
+                <ion-slide>
+                    <br>
+                    <br>
+
+                    <ion-row>
+                        <ion-col col-6>
+                            <ion-card>
+                                <ion-card-header>
+                                    Temporadas
+                                </ion-card-header>
+
+                                <ion-card-content>
+                                    <h1>{{seasons.length}}</h1>
+                                </ion-card-content>
+
+                            </ion-card>
+                        </ion-col>
+
+                        <ion-col col-6>
+                            <ion-card>
+                                <ion-card-header>
+                                    Partidos
+                                </ion-card-header>
+
+                                <ion-card-content>
+                                    <h1>{{totalMatchdays}}</h1>
+                                </ion-card-content>
+
+                            </ion-card>
+                        </ion-col>
+                    </ion-row>
+
+                    <ion-row>
+                        <ion-col col-6 text-center>
+
+                            <h1>
+                                {{totalGoals}}
+                            </h1>
+                            <h4>Goles</h4>
+                        </ion-col>
+
+                        <ion-col col-6 text-center>
+
+                            <h1>
+                                {{totalAss}}
+                            </h1>
+                            <h4>Asistencias</h4>
+                        </ion-col>
+                    </ion-row>
+                </ion-slide>
+
+                <ion-slide text-center>
+                    <br>
+                    <br>
+                    <h1>Plusfrotatores</h1>
+                    <ion-list class="backgndList">
+                        <ion-item *ngFor="let plus of plusfrotatores" (click)="showPlayerProfile(plus.name)">
+                            <ion-avatar item-start>
+                                <img src="assets/imgs/pht.png">
+                            </ion-avatar>
+                            <h2>{{plus.name}}</h2>
+                            <h2>
+                                <ion-icon name="football"></ion-icon>
+                                {{plus.goals}} goles
+                            </h2>
+                            <p>
+                                <ion-icon name="stats"></ion-icon>
+                                {{plus.avg}} goles / partidos
+                            </p>
+                        </ion-item>
+                    </ion-list>
+                </ion-slide>
+
+                <ion-slide text-center>
+                    <br>
+                    <br>
+                    <h1>Asistidores</h1>
+                    <ion-list class="backgndList">
+                        <ion-item *ngFor="let ass of assistances" (click)="showPlayerProfile(ass.name)">
+                            <ion-avatar item-start>
+                                <img src="assets/imgs/pht.png">
+                            </ion-avatar>
+                            <h2>{{ass.name}}</h2>
+                            <h2>
+                                <ion-icon name="football"></ion-icon>
+                                {{ass.assistances}} asistencias
+                            </h2>
+                            <p>
+                                <ion-icon name="stats"></ion-icon>
+                                {{ass.avg}} asistencias / partidos
+                            </p>
+                        </ion-item>
+                    </ion-list>
+                </ion-slide>
+
+                <ion-slide text-center>
+                    <br>
+                    <br>
+                    <h1>Autogoles</h1>
+                    <ion-list class="backgndList">
+                        <ion-item *ngFor="let sp of spy" (click)="showPlayerProfile(sp.name)">
+                            <ion-avatar item-start>
+                                <img src="assets/imgs/pht.png">
+                            </ion-avatar>
+                            <h2>{{sp.name}}</h2>
+                            <h2>
+                                <ion-icon name="football"></ion-icon>
+                                {{sp.autogoals}} autogoles
+                            </h2>
+                        </ion-item>
+                    </ion-list>
+                </ion-slide>
+
+                <ion-slide text-center>
+                    <br>
+                    <br>
+                    <h1>Leñadores</h1>
+                    <ion-list class="backgndList">
+                        <ion-item *ngFor="let lenn of lennadores" (click)="showPlayerProfile(lenn.name)">
+                            <ion-avatar item-start>
+                                <img src="assets/imgs/pht.png">
+                            </ion-avatar>
+                            <h2>{{lenn.name}}</h2>
+                            <h3 style="display: inline-block" text-center>
+                                <div style="background-color: gold; width: 20px;height: 30px"></div>
+                                {{lenn.yCards}}
+                            </h3>
+
+                            <h3 style="display: inline-block" text-center>
+                                <div style="background-color: red; width: 20px;height: 30px"></div>
+                                {{lenn.rCards}}
+                            </h3>
+                        </ion-item>
+                    </ion-list>
+                </ion-slide>
+
+                <ion-slide text-center>
+                    <br>
+                    <br>
+                    <h1>Con más partidos</h1>
+                    <ion-list class="backgndList">
+                        <ion-item *ngFor="let player of playersMoreGames" (click)="showPlayerProfile(player.name)">
+                            <ion-avatar item-start>
+                                <img src="assets/imgs/pht.png">
+                            </ion-avatar>
+                            <h2>{{player.name}}</h2>
+                            <h3>
+                                {{player.totalGames}} partidos
+                            </h3>
+                        </ion-item>
+                    </ion-list>
+                </ion-slide>
+
+                <ion-slide text-center>
+                    <br>
+                    <br>
+                    <h1>MVPs</h1>
+                    <ion-list class="backgndList">
+                        <ion-item *ngFor="let mvp of mostMvpPlayer"  (click)="showPlayerProfile(mvp.name)">
+                            <ion-avatar item-start>
+                                <img src="assets/imgs/pht.png">
+                            </ion-avatar>
+                            <h2>{{mvp.name}}</h2>
+                            <h3>
+                                <ion-icon name="medal"></ion-icon>
+                                {{mvp.totalMVP}} MVPs
+                            </h3>
+                        </ion-item>
+                    </ion-list>
+                </ion-slide>
+
+            </ion-slides>
+        </ion-row>
+    </ion-grid>
+</ion-content>
